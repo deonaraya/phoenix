@@ -1,4 +1,5 @@
 package com.phoenix.united.tests;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -7,7 +8,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Dec25_2 {
+public class Dec25 {
 
     WebDriver driver ;
 
@@ -29,25 +30,24 @@ public class Dec25_2 {
 
     //figure out the priority thing
     @Test
-    public void moto(){
-        driver.get("https://www.sony.com");
+    public void holi(){
+        driver.get("https://www.myntra.com");
         System.out.println(driver.getTitle());
         driver.close();
 
     }
 
-//    @Test
-//    public void testB(){
-//        driver.get("https://www.amazon.com");
-//        System.out.println(driver.getTitle());
-//        driver.close();
-//    }
+    @Test
+    public void diwali(){
+        driver.get("https://www.motorola.com");
+        System.out.println(driver.getTitle());
+        driver.close();
+    }
 
 
     @AfterMethod
     public void tearDown(){
         driver.quit();
     }
-
 
 }

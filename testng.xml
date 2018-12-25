@@ -2,17 +2,20 @@
 
 
 
-<suite name="Suite1" verbose="1" parallel="tests">
+<suite name="Suite1" verbose="1" parallel="classes">
+    <parameter name="browser" value="chrome"/>
     <test name="chromeTest">
         <classes>
             <class name="com.phoenix.united.tests.Dec24"/>
+            <class name="com.phoenix.united.tests.Dec25_2"/>
         </classes>
     </test>
 
 
+    <parameter name="browser" value="firefox"/>
     <test name="firefoxTest" >
         <classes>
-            <class name="com.phoenix.united.tests.Dec25_2"/>
+            <class name="com.phoenix.united.tests.Dec25"/>
         </classes>
     </test>
 </suite>
