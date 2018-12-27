@@ -7,24 +7,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-public class Dec25_2 {
-
-    WebDriver driver ;
-
-    @Parameters("browser")
-    @BeforeMethod
-    public void setUp(String browser){
-        if (browser.equalsIgnoreCase("CHROME")) {
-            System.setProperty("webdriver.chrome.driver","/Users/cnarayan/Documents/opia/united/src/test/resources/chromedriver");
-            driver = new ChromeDriver();
-        }
-        else
-        if(browser.equalsIgnoreCase("firefox")) {
-            System.setProperty("webdriver.gecko.driver","/Users/cnarayan/Documents/opia/united/src/test/resources/geckodriver");
-            driver = new FirefoxDriver();
-        }
-    }
-
+public class Dec25_2 extends BaseTest {
 
 
     //figure out the priority thing
@@ -32,22 +15,18 @@ public class Dec25_2 {
     public void moto(){
         driver.get("https://www.sony.com");
         System.out.println(driver.getTitle());
-        driver.close();
-
-    }
-
-//    @Test
-//    public void testB(){
-//        driver.get("https://www.amazon.com");
-//        System.out.println(driver.getTitle());
 //        driver.close();
-//    }
 
-
-    @AfterMethod
-    public void tearDown(){
-        driver.quit();
     }
+
+    @Test
+    public void testB(){
+        driver.get("https://www.amazon.com");
+        System.out.println(driver.getTitle());
+//        driver.close();
+    }
+
+
 
 
 }
