@@ -21,7 +21,7 @@ public class Dec25_2 extends BaseTest {
 
     @Test
     public void testB(){
-        driver.get("https://www.amazon.com");
+        driver.get("https://www.flipkart.com");
         System.out.println(driver.getTitle());
 //        driver.close();
     }

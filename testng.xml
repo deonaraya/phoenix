@@ -3,24 +3,27 @@
 
 
 <suite name="Suite1" verbose="1" parallel="tests">
-    <!--<parameter name="browser" value="chrome"/>-->
-    <!--<test name="chromeTest">-->
-        <!--<classes>-->
-            <!--<class name="com.phoenix.united.tests.Dec24"/>-->
-            <!--&lt;!&ndash;<class name="com.phoenix.united.tests.Dec25_2"/>&ndash;&gt;-->
-        <!--</classes>-->
-    <!--</test>-->
 
-    <!--<parameter name="browser" value="firefox"/>-->
-    <!--<test name="firefoxTest_1" >-->
-        <!--<classes>-->
+    <test name="chromeTest">
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.phoenix.united.tests.Dec24"/>
             <!--<class name="com.phoenix.united.tests.Dec25_2"/>-->
-        <!--</classes>-->
-    <!--</test>-->
+        </classes>
+    </test>
 
 
-    <parameter name="browser" value="chrome"/>
-    <test name="firefoxTest" >
+    <test name="firefoxTest_1" >
+        <parameter name="browser" value="firefox"/>
+        <classes>
+            <class name="com.phoenix.united.tests.Dec25_2"/>
+        </classes>
+    </test>
+
+
+
+    <test name="foxTest" >
+        <parameter name="browser" value="chrome"/>
         <classes>
             <class name="com.phoenix.united.tests.practiceAutomation"/>
         </classes>
