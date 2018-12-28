@@ -32,8 +32,6 @@ public class practiceAutomation extends BaseTest {
         }
     }
 
-    @Test
-    public
 
 
 }
