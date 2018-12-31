@@ -4,28 +4,31 @@
 
 <suite name="Suite1" verbose="1" parallel="tests">
 
-    <test name="chromeTest">
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="com.phoenix.united.tests.Dec24"/>
+    <!--<test name="chromeTest">-->
+        <!--<parameter name="browser" value="firefox"/>-->
+        <!--<classes>-->
+            <!--<class name="com.phoenix.united.tests.Dec24"/>-->
+            <!--&lt;!&ndash;<class name="com.phoenix.united.tests.Dec25_2"/>&ndash;&gt;-->
+        <!--</classes>-->
+    <!--</test>-->
+
+
+    <!--<test name="firefoxTest_1" >-->
+        <!--<parameter name="browser" value="firefox"/>-->
+        <!--<classes>-->
             <!--<class name="com.phoenix.united.tests.Dec25_2"/>-->
-        </classes>
-    </test>
-
-
-    <test name="firefoxTest_1" >
-        <parameter name="browser" value="firefox"/>
-        <classes>
-            <class name="com.phoenix.united.tests.Dec25_2"/>
-        </classes>
-    </test>
+        <!--</classes>-->
+    <!--</test>-->
 
 
 
     <test name="foxTest" >
         <parameter name="browser" value="chrome"/>
         <classes>
-            <class name="com.phoenix.united.tests.practiceAutomation"/>
+            <class name="com.phoenix.united.tests.PomTestOne"/>
         </classes>
     </test>
+
+
+
 </suite>
