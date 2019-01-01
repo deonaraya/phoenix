@@ -13,6 +13,23 @@ public class HomePage {
 
     WebDriver driver;
 
+
+
+
+    @FindBy(className = "search_query")
+    private WebElement searchTextField ;
+
+//    @FindBy(xpath = "//input[name='search_query']")
+//    private WebElement searchTextField ;
+
+
+    @FindBy(className = "button-search")
+    private WebElement searchButton ;
+
+//    @FindBy(xpath = "//button[@name='submit_search']")
+//    private WebElement searchButton ;
+
+
 //    String dummy = "//ul[@id='homefeatured']/li[5]//h5[@itemprop='name']/a";
 //    WebElement priceItem = driver.findElement(By.xpath(dummy));
 
@@ -54,27 +71,27 @@ public class HomePage {
     }
 
     public void getProductList(){
-
         for (WebElement name: productNames) {
             System.out.println(name.getText());
         }
     }
 
     public void getPriceList(){
-
         for (WebElement price: productPrices) {
             System.out.println(price.getText());
         }
     }
 
-
     public void addToCart(){
-
         Actions actions = new Actions(driver);
         actions.moveToElement(productContainer1).build().perform();
         addToCart1.click();
     }
 
 
+    public void searchforProduct(String productName){
+        searchTextField.sendKeys(productName);
+        searchButton.click();
+    }
 
 }
