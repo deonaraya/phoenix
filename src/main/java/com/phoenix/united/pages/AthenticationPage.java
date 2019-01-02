@@ -1,13 +1,17 @@
 package com.phoenix.united.pages;
 
+import com.sun.xml.internal.rngom.parse.host.Base;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AthenticationPage {
+public class AthenticationPage extends BasePage {
 
-    WebDriver driver ;
+    @FindBy(xpath = "//h1[text()='Authentication']")
+    private WebElement authText;
 
     @FindBy(id = "email_create")
     private WebElement registerTextField;
@@ -16,8 +20,9 @@ public class AthenticationPage {
     private WebElement registerButton;
 
     public AthenticationPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver,this);
+        waitForWebElement(authText);
     }
 
     public void registerUser(String emailId){

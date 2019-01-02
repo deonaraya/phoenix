@@ -4,11 +4,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-public class AddToCartPopUpPage {
-
-    WebDriver driver;
+public class AddToCartPopUpPage extends BasePage {
 
     @FindBy(xpath = "//i[@class='icon-ok']/parent::h2")
     private WebElement addToCartSuccesMessage ;
@@ -25,15 +25,25 @@ public class AddToCartPopUpPage {
     @FindBy(xpath = "")
     private WebElement backToShoppingButton ;
 
+
     public AddToCartPopUpPage(WebDriver driver) {
-        this.driver = driver;
+        super(driver);
         PageFactory.initElements(driver,this);
+        waitForWebElement(addToCartSuccesMessage);
     }
 
-
-    public void verifyProductAdded(){
-        Assert.assertEquals(addToCartSuccesMessage.getText(),"Product successfully added to your shopping cart");
+    public String getSuccessMessage(){
+        return addToCartSuccesMessage.getText();
     }
+
+    public String getProductName(){
+        return productName.getText();
+    }
+
+    public String getProductPrice(){
+        return productPrice.getText();
+    }
+
 
     public void proceedCheckout(){
         proceedCheckOutButton.click();
