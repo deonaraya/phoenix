@@ -4,6 +4,7 @@ import com.phoenix.united.pages.AddToCartPopUpPage;
 import com.phoenix.united.pages.AuthenticationPage;
 import com.phoenix.united.pages.CartSummaryPage;
 import com.phoenix.united.pages.HomePage;
+import com.phoenix.united.utils.ExcelUtils;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
@@ -57,11 +58,14 @@ public class PomTestOne extends BaseTest {
         return Data;
     }
 
-        @Test(dataProvider = "readExcel")
-        public void loginFromExcel(String uname,String pwd){
+        @DataProvider(name = "mora")
+        public Object[][] passDataToLogin(){
+            return new Object[][]{{"deo1","pwd1"},{"deo2","pwd2"},{"deo4","pwd3"}};
+        }
+
+        @Test(dataProvider = "readExcel", enabled = false)
+        public void login(String uname,String pwd){
             HomePage homePage = new HomePage(driver);
-
-
             homePage.navToSIgnIn().signIn(uname,pwd);
 
 //            AuthenticationPage authenticationPage = new AuthenticationPage(driver);
@@ -73,6 +77,13 @@ public class PomTestOne extends BaseTest {
                 e.printStackTrace();
             }
 
+        }
+
+
+        @Test
+        public void methodChans(){
+        HomePage homePage = new HomePage(driver);
+        homePage.addToCart().proceedCheckout().proceedToCheckout().signIn("sdasdas@tedf.com","pwd");
         }
 
 

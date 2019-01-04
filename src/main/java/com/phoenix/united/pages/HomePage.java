@@ -90,7 +90,7 @@ public class HomePage extends BasePage {
         }
     }
 
-    public void addToCart(){
+    public AddToCartPopUpPage addToCart(){
         Actions actions = new Actions(driver);
         actions.moveToElement(productContainer1).build().perform();
 
@@ -99,6 +99,7 @@ public class HomePage extends BasePage {
 
 //        if add to cart is not visible yet
         addToCart1.click();
+        return new AddToCartPopUpPage(driver);
     }
 
 

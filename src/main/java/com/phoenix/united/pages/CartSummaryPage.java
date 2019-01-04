@@ -21,7 +21,8 @@ public class CartSummaryPage extends BasePage {
         waitForWebElement(cartSummaryPageLocator);
     }
 
-    public void proceedToCheckout(){
+    public AuthenticationPage proceedToCheckout(){
         checkoutButton.click();
+        return new AuthenticationPage(driver);
     }
 }

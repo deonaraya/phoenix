@@ -45,8 +45,9 @@ public class AddToCartPopUpPage extends BasePage {
     }
 
 
-    public void proceedCheckout(){
+    public CartSummaryPage proceedCheckout(){
         proceedCheckOutButton.click();
+        return new CartSummaryPage(driver);
     }
 
 
