@@ -54,11 +54,21 @@ public class HomePage extends BasePage {
     private WebElement productContainer1 ;
 
 
+    @FindBy(className = "login")
+    private WebElement loginLink;
+
+
     public HomePage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver,this);
+        waitForWebElement(loginLink);
     }
 
+
+    public AuthenticationPage navToSIgnIn(){
+        loginLink.click();
+        return new AuthenticationPage(driver);
+    }
 
     public String getProductName(){
          return  productName1.getText();

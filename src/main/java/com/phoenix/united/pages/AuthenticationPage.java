@@ -8,7 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class AthenticationPage extends BasePage {
+public class AuthenticationPage extends BasePage {
 
     @FindBy(xpath = "//h1[text()='Authentication']")
     private WebElement authText;
@@ -19,10 +19,27 @@ public class AthenticationPage extends BasePage {
     @FindBy(id = "SubmitCreate")
     private WebElement registerButton;
 
-    public AthenticationPage(WebDriver driver) {
+
+
+    @FindBy(id = "email")
+    private WebElement emailTextField ;
+
+    @FindBy(id = "passwd")
+    private WebElement passwordTextField ;
+
+    @FindBy(id = "SubmitLogin")
+    private WebElement loginButton;
+
+    public AuthenticationPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver,this);
         waitForWebElement(authText);
+    }
+
+    public void signIn(String uname , String pwd){
+        emailTextField.sendKeys(uname);
+        passwordTextField.sendKeys(pwd);
+        loginButton.click();
     }
 
     public void registerUser(String emailId){
